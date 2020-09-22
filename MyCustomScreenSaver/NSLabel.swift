@@ -26,3 +26,11 @@ class NSLabel: NSTextField {
 		translatesAutoresizingMaskIntoConstraints = false
 	}
 }
+
+extension NSLabel {
+	convenience init(textColor color: NSColor, fontSize size: CGFloat) {
+		self.init()
+		self.textColor = color
+		self.font = NSFont.systemFont(ofSize: size)
+	}
+}
