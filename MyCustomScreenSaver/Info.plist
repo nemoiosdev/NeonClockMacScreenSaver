@@ -19,6 +19,6 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSPrincipalClass</key>
-	<string>MyCustomScreenSaverView</string>
+	<string>MyCustomScreenSaverView.MyCustomScreenSaverView</string>
 </dict>
 </plist>

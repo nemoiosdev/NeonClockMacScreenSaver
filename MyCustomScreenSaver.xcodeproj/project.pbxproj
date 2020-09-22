@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0F1D9C2519CF06000140B0 /* MyCustomScreenSaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0F1D9B2519CF06000140B0 /* MyCustomScreenSaverView.h */; };
-		CE0F1D9E2519CF07000140B0 /* MyCustomScreenSaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0F1D9D2519CF07000140B0 /* MyCustomScreenSaverView.m */; };
+		CE0F1DA72519CF3A000140B0 /* MyCustomScreenSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F1DA62519CF3A000140B0 /* MyCustomScreenSaver.swift */; };
+		CE0F1DAB2519D728000140B0 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F1DAA2519D728000140B0 /* NSLabel.swift */; };
+		CE0F1DB52519E17B000140B0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F1DB42519E17B000140B0 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0F1D982519CF06000140B0 /* MyCustomScreenSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCustomScreenSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0F1D9B2519CF06000140B0 /* MyCustomScreenSaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCustomScreenSaverView.h; sourceTree = "<group>"; };
-		CE0F1D9D2519CF07000140B0 /* MyCustomScreenSaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCustomScreenSaverView.m; sourceTree = "<group>"; };
 		CE0F1D9F2519CF07000140B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE0F1DA62519CF3A000140B0 /* MyCustomScreenSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomScreenSaver.swift; sourceTree = "<group>"; };
+		CE0F1DAA2519D728000140B0 /* NSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
+		CE0F1DB42519E17B000140B0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +50,20 @@
 		CE0F1D9A2519CF06000140B0 /* MyCustomScreenSaver */ = {
 			isa = PBXGroup;
 			children = (
-				CE0F1D9B2519CF06000140B0 /* MyCustomScreenSaverView.h */,
-				CE0F1D9D2519CF07000140B0 /* MyCustomScreenSaverView.m */,
+				CE0F1DA62519CF3A000140B0 /* MyCustomScreenSaver.swift */,
 				CE0F1D9F2519CF07000140B0 /* Info.plist */,
+				CE0F1DBC2519E377000140B0 /* Support */,
 			);
 			path = MyCustomScreenSaver;
+			sourceTree = "<group>";
+		};
+		CE0F1DBC2519E377000140B0 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CE0F1DAA2519D728000140B0 /* NSLabel.swift */,
+				CE0F1DB42519E17B000140B0 /* Constant.swift */,
+			);
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -62,7 +73,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0F1D9C2519CF06000140B0 /* MyCustomScreenSaverView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +107,7 @@
 				TargetAttributes = {
 					CE0F1D972519CF06000140B0 = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -133,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0F1D9E2519CF07000140B0 /* MyCustomScreenSaverView.m in Sources */,
+				CE0F1DA72519CF3A000140B0 /* MyCustomScreenSaver.swift in Sources */,
+				CE0F1DAB2519D728000140B0 /* NSLabel.swift in Sources */,
+				CE0F1DB52519E17B000140B0 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,13 +267,22 @@
 		CE0F1DA32519CF07000140B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5YP25JL9TR;
 				INFOPLIST_FILE = MyCustomScreenSaver/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ngocthai.MyCustomScreenSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Debug;
@@ -268,13 +290,21 @@
 		CE0F1DA42519CF07000140B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 5YP25JL9TR;
 				INFOPLIST_FILE = MyCustomScreenSaver/Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ngocthai.MyCustomScreenSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = saver;
 			};
 			name = Release;
