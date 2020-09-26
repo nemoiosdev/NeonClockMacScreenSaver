@@ -107,9 +107,6 @@ class MyCustomScreenSaver: ScreenSaverView {
 	}
 }
 
-// https://stackoverflow.com/questions/30381923/is-it-possible-to-use-bindings-in-the-nib-with-screensaverdefaults
-// https://stackoverflow.com/questions/13572627/how-to-set-up-osx-screen-saver-configuration-sheet
-
 extension MyCustomScreenSaver {
 	func configure() {
 		wantsLayer = true
@@ -117,10 +114,6 @@ extension MyCustomScreenSaver {
 		
 		addSubviews()
 		addContraints()
-		
-//		let bundle = Bundle.init(for: type(of: self))
-//		let ssDefault = ScreenSaverDefaults.init(forModuleWithName: bundle.bundleIdentifier!)!
-//		ssDefault.register(defaults: ["is24Hour" : false])
 	}
 	
 	func addSubviews() {
