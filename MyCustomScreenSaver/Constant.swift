@@ -2,12 +2,13 @@
 //  Constant.swift
 //  MyCustomScreenSaver
 //
-//  Created by NgocThai on 9/22/20.
+//  Created by NgocThai on 9/26/20.
 //
 
-import AppKit
+import Foundation
 
 struct Constants {
-	let textColor: NSColor = .white
-	let timeFontSize: CGFloat = 50.0
+	static let effect: CGFloat = 4		// 
+	static let updateInterval = 0.1 	// update interval every animation
+	static let size: CGFloat = 5 		// Size for Shadow offset
 }
